@@ -49,6 +49,32 @@ Todos los ejercicios han sido optimizados utilizando buenas prácticas como `try
 
 ---
 
+### Ejercicio 2: Navegador Web Simple
+
+**Descripción**: Implementación de un cliente HTTP básico que descarga el contenido HTML de una página web y lo guarda en un archivo local.
+
+**Archivo**: [`src/main/java/arsw/exerciseTwo/BrowserApplication.java`](src/main/java/arsw/exerciseTwo/BrowserApplication.java)
+
+**Funcionalidades**:
+- Conexión HTTP mediante `URL.openStream()`
+- Lectura de contenido web línea por línea
+- Escritura del HTML descargado en archivo `resultado.html`
+- Uso de `try-with-resources` para gestión automática de recursos
+
+**Características técnicas**:
+- Utiliza tecnologías de Java tradicionales (`java.net.URL`)
+- Manejo de redirecciones automáticas (HTTP a HTTPS)
+- BufferedReader para lectura eficiente
+- BufferedWriter para escritura de archivos
+
+**Nota**: Google redirige automáticamente las peticiones HTTP a HTTPS, aunque la petición inicial sea HTTP.
+
+**Demostración**:
+
+![Captura de pantalla del Ejercicio 2](#)
+
+---
+
 ### Ejercicio 4.3.1: Echo Server Básico
 
 **Descripción**: Implementación de un servidor echo clásico que recibe mensajes del cliente y los devuelve exactamente como fueron enviados.
@@ -147,13 +173,15 @@ bye      - Termina la conexión
 
 ### Ejercicio 6.4.1: Chat con RMI
 
-**Descripción**: Sistema de chat distribuido implementado con RMI (Remote Method Invocation), permitiendo comunicación entre múltiples clientes.
+**Descripción**: Sistema de chat distribuido implementado con RMI (Remote Method Invocation), permitiendo comunicación entre múltiples clientes conectados simultáneamente.
 
 **Archivos**:
 - Servidor: [`src/main/java/arsw/exerciseSixFourthOne/server/ChatServerImpl.java`](src/main/java/arsw/exerciseSixFourthOne/server/ChatServerImpl.java)
 - Cliente: [`src/main/java/arsw/exerciseSixFourthOne/client/ChatClientImpl.java`](src/main/java/arsw/exerciseSixFourthOne/client/ChatClientImpl.java)
 - Interfaz Servidor: [`src/main/java/arsw/exerciseSixFourthOne/server/ChatServer.java`](src/main/java/arsw/exerciseSixFourthOne/server/ChatServer.java)
 - Interfaz Cliente: [`src/main/java/arsw/exerciseSixFourthOne/client/ChatClient.java`](src/main/java/arsw/exerciseSixFourthOne/client/ChatClient.java)
+- Aplicación Cliente 1: [`src/main/java/arsw/exerciseSixFourthOne/client/ChatClientApp.java`](src/main/java/arsw/exerciseSixFourthOne/client/ChatClientApp.java)
+- Aplicación Cliente 2: [`src/main/java/arsw/exerciseSixFourthOne/client/ChatClientAppTwo.java`](src/main/java/arsw/exerciseSixFourthOne/client/ChatClientAppTwo.java)
 
 **Características**:
 - Arquitectura cliente-servidor distribuida con RMI
@@ -161,27 +189,35 @@ bye      - Termina la conexión
 - Broadcast de mensajes a todos los clientes conectados
 - Registro y gestión dinámica de clientes
 - Configuración de host remoto mediante `java.rmi.server.hostname`
+- Interfaz de usuario interactiva con entrada de datos personalizada
 
 **Funcionalidades**:
 - **Servidor**: 
   - Gestión de clientes conectados usando `Set<ChatClient>`
   - Distribución de mensajes a todos los clientes excepto el emisor
-  - Puerto RMI registry configurable
+  - Puerto RMI registry configurable (por defecto: 1099)
+  - Registro del servicio como "chatServer"
+  
 - **Cliente**: 
-  - Registro automático con el servidor
-  - Envío de mensajes al servidor
-  - Recepción de mensajes de otros clientes
+  - Registro automático con el servidor mediante callbacks RMI
+  - Envío de mensajes al servidor para broadcast
+  - Recepción de mensajes de otros clientes en tiempo real
+  - Exportación como objeto remoto para recibir mensajes
+  - Configuración interactiva de usuario, IP y puerto
+  - Comando 'end' para salir del chat
 
-**Mejoras**:
+**Arquitectura RMI**:
+- El cliente se exporta como objeto remoto (`UnicastRemoteObject.exportObject`)
+- El servidor mantiene referencias a todos los clientes conectados
+- Comunicación bidireccional mediante interfaces remotas
+- Sin necesidad de polling: notificaciones push mediante callbacks
+
+**Mejoras implementadas**:
 - Eliminación de `SecurityManager` (deprecado y no necesario en entorno local)
-- Uso de interfaces remotas para comunicación
-
-**Demostración**:
-
-![Captura de pantalla del Ejercicio 6.4.1](#)
-
----
-
+- Uso de interfaces remotas para comunicación tipo-segura
+- Aplicaciones cliente separadas (`ChatClientApp` y `ChatClientAppTwo`) para pruebas multi-usuario
+- Manejo automático de recursos con `try-with-resources`
+- Validación y configuración interactiva de parámetros de conexión
 ## 📦 Requisitos
 
 - **Java JDK**: 11 o superior
