@@ -206,55 +206,6 @@ mvn clean compile
 mvn package
 ```
 
-## 💻 Uso
-
-### Ejecutar un ejercicio específico
-
-Cada ejercicio puede ejecutarse de forma independiente. A continuación algunos ejemplos:
-
-**Ejercicio 1 - URL Information**:
-```bash
-mvn exec:java -Dexec.mainClass="arsw.exerciseOne.URLInformation"
-```
-
-**Ejercicio 4.3.1 - Echo Server**:
-```bash
-# Terminal 1 - Servidor
-mvn exec:java -Dexec.mainClass="arsw.exersiceFourthThreeOne.EchoServer"
-
-# Terminal 2 - Cliente
-mvn exec:java -Dexec.mainClass="arsw.exersiceFourthThreeOne.EchoClient"
-```
-
-**Ejercicio 4.3.2 - Echo Server con Funciones**:
-```bash
-# Terminal 1 - Servidor
-mvn exec:java -Dexec.mainClass="arsw.exerciseFourthThreeTwo.EchoServerFun"
-
-# Terminal 2 - Cliente
-mvn exec:java -Dexec.mainClass="arsw.exerciseFourthThreeTwo.EchoClientFun"
-```
-
-**Ejercicio 4.4 - Web Server**:
-```bash
-mvn exec:java -Dexec.mainClass="arsw.exerciseFourthFourth.WebServer"
-# Luego abrir en navegador: http://localhost:35000
-```
-
-**Ejercicio 5.2.1 - Datagram Time Client**:
-```bash
-mvn exec:java -Dexec.mainClass="arsw.exerciseFiveTwoOne.DatagramTimeClient"
-```
-
-**Ejercicio 6.4.1 - Chat RMI**:
-```bash
-# Terminal 1 - Servidor
-mvn exec:java -Dexec.mainClass="arsw.exerciseSixFourthOne.server.ChatServerImpl"
-
-# Terminal 2, 3, ... - Clientes
-mvn exec:java -Dexec.mainClass="arsw.exerciseSixFourthOne.client.ChatClientImpl"
-```
-
 ## 🛠️ Tecnologías
 
 - **Lenguaje**: Java
