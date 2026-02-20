@@ -45,7 +45,7 @@ Todos los ejercicios han sido optimizados utilizando buenas prácticas como `try
 
 **Demostración**:
 
-![Captura de pantalla del Ejercicio 1](#)
+![Captura de pantalla del Ejercicio 1](imgs/img.png)
 
 ---
 
@@ -71,7 +71,7 @@ Todos los ejercicios han sido optimizados utilizando buenas prácticas como `try
 
 **Demostración**:
 
-![Captura de pantalla del Ejercicio 2](#)
+![Captura de pantalla del Ejercicio 2](imgs/img_1.png)
 
 ---
 
@@ -91,7 +91,7 @@ Todos los ejercicios han sido optimizados utilizando buenas prácticas como `try
 
 **Demostración**:
 
-![Captura de pantalla del Ejercicio 4.3.1](#)
+![Captura de pantalla del Ejercicio 4.3.1](imgs/img_2.png)
 
 ---
 
@@ -119,7 +119,7 @@ bye      - Termina la conexión
 
 **Demostración**:
 
-![Captura de pantalla del Ejercicio 4.3.2](#)
+![Captura de pantalla del Ejercicio 4.3.2](imgs/img_3.png)
 
 ---
 
@@ -144,9 +144,33 @@ bye      - Termina la conexión
 
 **Demostración**:
 
-![Captura de pantalla del Ejercicio 4.4](#)
+![Captura de pantalla del Ejercicio 4.4](imgs/img_4.png)
 
 ---
+### Ejercicio 5.1: Servidor WEB varias peticiones
+
+**Descripción**: Implementación de un servidor web que permite varias peticiones y traer archivos.
+
+**Archivo**: [`src/main/java/arsw/exerciseFourthFourth/WebServer.java`](src/main/java/arsw/exerciseFourthFourth/WebServer.java)
+
+**Características**:
+- Servidor HTTP en puerto `35000`
+- Respuestas HTTP/1.1 con headers apropiados
+- Servicio de contenido HTML
+- Compatible con navegadores modernos (headers HTTP completos)
+- Permite traer archivos como imagenes del servidor web.
+
+**Mejoras implementadas**:
+- Headers HTTP completos requeridos por navegadores modernos
+- `Content-Type` y `Content-Length` apropiados
+- Línea vacía separando headers del cuerpo HTML
+- Identifica el tipo del archivo que se quiere y lo trae.
+
+**Acceso**: `http://localhost:35000`
+
+**Demostración**:
+
+![Captura de pantalla del Ejercicio 5.1](imgs/img_5.png)
 
 ### Ejercicio 5.2.1: Cliente de Tiempo con Datagramas
 
@@ -167,7 +191,7 @@ bye      - Termina la conexión
 
 **Demostración**:
 
-![Captura de pantalla del Ejercicio 5.2.1](#)
+![Captura de pantalla del Ejercicio 5.2.1](imgs/img_6.png)
 
 ---
 
@@ -218,6 +242,15 @@ bye      - Termina la conexión
 - Aplicaciones cliente separadas (`ChatClientApp` y `ChatClientAppTwo`) para pruebas multi-usuario
 - Manejo automático de recursos con `try-with-resources`
 - Validación y configuración interactiva de parámetros de conexión
+
+**Demostración**:
+
+![img_7.png](imgs/img_7.png)
+
+### [EjercicioRPC](https://github.com/Julian54628/Lab3ARSWr-RPC-SOCKETS.git)
+
+### [Ejercicio P2P](https://github.com/miguelvanegas-c/P2P.git)
+
 ## 📦 Requisitos
 
 - **Java JDK**: 11 o superior
