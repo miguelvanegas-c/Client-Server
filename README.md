@@ -287,15 +287,6 @@ Client-Server/
 └── README.md
 ```
 
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Si deseas mejorar este proyecto:
-
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
 
 ## 👨‍💻 Autor
 
@@ -303,7 +294,3 @@ Las contribuciones son bienvenidas. Si deseas mejorar este proyecto:
 - GitHub: [@miguelvanegas-c](https://github.com/miguelvanegas-c)
 
 ---
-
-⭐ Si este proyecto te fue útil, considera darle una estrella en GitHub
-
-📝 **Nota**: Este es un proyecto educativo para aprender conceptos de programación de red en Java.
