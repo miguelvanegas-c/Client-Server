@@ -10,13 +10,15 @@ import java.util.Scanner;
 
 public class ChatApplication {
     public static void main(String[] args){
-        try(Scanner sc = new Scanner(System.in)) {
+        try {
+            Scanner sc = new Scanner(System.in);
             System.out.println("Ingresa la ip del servidor");
             String ip = sc.nextLine();
             System.out.println("Ingresa el socket que deseas usar");
             int socket = Integer.parseInt(sc.nextLine());
             ChatServer chatServer = new ChatServerImpl(ip, socket, "chatServer");
             ChatClient[] clients = {new ChatClientImpl(), new ChatClientImpl()};
+            sc.close();
             for(ChatClient c: clients){
                 chatServer.newClient(c);
             }

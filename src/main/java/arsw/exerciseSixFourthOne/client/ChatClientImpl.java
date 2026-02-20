@@ -31,6 +31,6 @@ public class ChatClientImpl implements ChatClient{
     }
 
     public void getMessage(String message) throws RemoteException {
-
+        System.out.println(message);
     }
 }
