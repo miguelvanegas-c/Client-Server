@@ -1,7 +1,5 @@
 # Client-Server
 
-[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
 Colección de ejercicios prácticos sobre arquitectura cliente-servidor implementados en Java. Este repositorio contiene ejemplos de servidores web, comunicación con datagramas UDP, y un sistema de chat usando RMI (Remote Method Invocation).
 
