@@ -5,7 +5,7 @@ import java.net.URL;
 
 public class URLInformation {
     public static void main(String[] args) throws MalformedURLException {
-        URL url = new URL("https:hola");
+        URL url = new URL("https:www.google.com");
         System.out.println(url.getProtocol());
         System.out.println(url.getAuthority());
         System.out.println(url.getHost());
